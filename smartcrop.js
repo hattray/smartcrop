@@ -13,7 +13,7 @@ var walker  = walk.walk('./uncompressed', { followLinks: false });
 walker.on('file', function(root, stat, next) {
     source = tinify.fromFile("uncompressed/"+stat.name); // pass the file to tinify to resize, we are choosing 100x100 as size of thumbnail
     resized = source.resize({
-  		method: "fit",
+  		method: "cover",
  		 width: 100,
  		 height: 100
 	});
